@@ -7,7 +7,7 @@ import Portfolio from './PortfolioComponent';
 import Contact from './ContactComponent';
 import Footer from './FooterComponent';
 
-import { View, Platform } from 'react-native';
+import { View, Platform, Text } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import ExpoStatusBar from 'expo-status-bar/build/ExpoStatusBar';
@@ -48,8 +48,8 @@ class Main extends Component {
                 flex: 1,
                 paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight
             }}>
-            
-            <AppNavigator />
+            <Text>words</Text>
+            {/* <AppNavigator /> */}
         </View>
         );
     }
