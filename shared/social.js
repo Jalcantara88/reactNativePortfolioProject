@@ -1,37 +1,37 @@
 export const SOCIAL = [
     {
         id: 0,
-        image: "/assets/socialIcons/behance.svg",
+        image: require("../assets/behance.png"),
         url: "https://www.behance.net/DeadHead"
     },
     {
         id: 1,
-        image: "/assets/socialIcons/facebook.svg",
+        image: require("../assets/facebook.png"),
         url: "https://www.facebook.com/bone.head.designer"
     },
     {
         id: 2,
-        image: "/assets/socialIcons/instagram.svg",
+        image: require("../assets/instagram.png"),
         url: "https://www.instagram.com/bone.head.designer/"
     },
     {
         id: 3,
-        image: "/assets/socialIcons/linkedin.svg",
+        image: require("../assets/linkedin.png"),
         url: "https://www.linkedin.com/in/deadheadstudio/"
     },
     {
         id: 4,
-        image: "/assets/socialIcons/ytube.svg",
+        image: require("../assets/ytube.png"),
         url: "https://www.youtube.com/channel/UCzLJQTYgUrhEFAOxt2ek0lg?"
     },
     {
         id: 5,
-        image: "/assets/socialIcons/upwork.svg",
+        image: require("../assets/upwork.png"),
         url: "https://www.upwork.com/o/profiles/users/~019888456e37ad31ca/?viewMode=1"
     },
     {
         id: 6,
-        image: "/assets/socialIcons/dribbble.svg",
+        image: require("../assets/dribbble.png"),
         url: "https://dribbble.com/deadheaddesign"
     }
 ];

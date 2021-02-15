@@ -1,44 +1,81 @@
 import React, { Component } from 'react';
 import { SOCIAL } from '../shared/social';
-import { Card, ListItem, Text } from 'react-native-elements';
-import { FlatList } from 'react-native';
+//import { Image } from 'react-native-elements';
+import { FlatList, Text, StyleSheet, Image, TouchableOpacity, Alert } from 'react-native';
+import { Linking } from 'react-native';
+import { StatusBar } from 'react-native';
 
 
 
 class SocialBar extends Component {
 
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             social: SOCIAL
-        };
-    }
-
-    static navigationOptions = {
-        title: 'SocialBar'
+        }
     }
 
     render() {
 
-        const { navigate } = this.props.navigation;
-
-        const renderSocialItem = ({item}) => {
-            return (
-                <View>
-                    <Image 
-                        source={item.image}
-                    />
-                </View>
-            );
-        };
-        return(
-            <FlatList
-                data={this.state.projects}
-                renderItem={renderSocialItem}
-                keyExtractor={item => item.id.toString()}
-            />
+        const renderSocialLink = ({item}) => (
+            <>
+            <TouchableOpacity
+                onPress={() => Linking.openURL(item.url)}
+            >
+                <Image 
+                    style={styles.socialIcon} 
+                    source={item.image}
+                    
+                />
+            </TouchableOpacity>
+            
+    
+            
+            </>
         );
+            
+        
+    
+            
+        
+            
+            return(
+                
+                <FlatList
+                    contentContainerStyle={styles.flatlist}
+                    data={this.state.social}
+                    renderItem={renderSocialLink}
+                    keyExtractor={(item) => item.id}
+                    horizontal={true}
+                />
+                
+                
+              
+            );
+
     }
+    
+    
 };
+
+const styles = StyleSheet.create({
+    flatlist: {
+        backgroundColor: '#683CEC',
+        height: 60,
+       
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    socialIcon: {
+        height: 50,
+        width: 50,
+        margin: 3
+    },
+    container: {
+        flex: 1,
+        marginTop: StatusBar.currentHeight || 0,
+    }
+});
 
 export default SocialBar;
