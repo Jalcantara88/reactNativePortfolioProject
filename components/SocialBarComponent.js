@@ -20,6 +20,7 @@ class SocialBar extends Component {
 
         const renderSocialLink = ({item}) => (
             <>
+            
             <TouchableOpacity
                 onPress={() => Linking.openURL(item.url)}
             >
@@ -46,7 +47,7 @@ class SocialBar extends Component {
                     contentContainerStyle={styles.flatlist}
                     data={this.state.social}
                     renderItem={renderSocialLink}
-                    keyExtractor={(item) => item.id}
+                    keyExtractor={(item) => item.id.toString()}
                     horizontal={true}
                 />
                 
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
     flatlist: {
         backgroundColor: '#683CEC',
         height: 60,
-       
+        width: '100%',
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -72,10 +73,6 @@ const styles = StyleSheet.create({
         width: 50,
         margin: 3
     },
-    container: {
-        flex: 1,
-        marginTop: StatusBar.currentHeight || 0,
-    }
 });
 
 export default SocialBar;
