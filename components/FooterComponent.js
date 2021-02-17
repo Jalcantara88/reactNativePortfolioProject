@@ -1,13 +1,30 @@
 import React, { Component } from 'react';
-import { View, Platform } from 'react-native';
-import { Card, Text } from 'react-native-elements';
+import { View, Button } from 'react-native';
+import { Text } from 'react-native-elements';
 
 class Footer extends Component {
 
 
     render() {
         return(
-            <View></View>
+            <View>
+                <Text style={{textAlign: 'center'}}>BACK TO TOP</Text>
+                <Button
+                    /*icon={
+                        <Icon
+                            name='label'
+                            type='material'
+                            size={25}
+                            color='blue'
+                        />
+                    }*/
+                    
+                    title='CONTACT'
+                    
+                >
+                    CONTACT
+                </Button>
+            </View>
         );
     }
 };

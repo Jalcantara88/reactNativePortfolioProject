@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import SocialBar from './SocialBarComponent';
 import Profile from './ProfileComponent';
 import Skills from './SkillsComponent';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import Footer from './FooterComponent';
+import Portfolio from './PortfolioComponent';
+import Contact from './ContactComponent';
+import { SafeAreaView, StyleSheet, ScrollView } from 'react-native';
 import { StatusBar } from 'react-native';
 
 
@@ -12,9 +15,14 @@ class Main extends Component {
         console.log(Skills);
         return (
             <SafeAreaView style={styles.container}>
-                <SocialBar />
-                <Profile />
-                <Skills />
+                <ScrollView>
+                    <SocialBar />
+                    <Profile />
+                    <Skills />
+
+                    <Contact />
+                </ScrollView>
+                
             </ SafeAreaView>
         );
     }

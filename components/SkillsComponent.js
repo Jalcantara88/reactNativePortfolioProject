@@ -11,39 +11,7 @@ function Skills() {
     const artSkills = SKILLS.filter(skill => skill.type === 'art');
     const videoSkills = SKILLS.filter(skill => skill.type === 'video');
     const threedeeSkills = SKILLS.filter(skill => skill.type === 'threedee');
-/*
-    const web = webSkills.map(skill => {
-        return(
-            <React.Fragment key={skill.id}>
-                <RenderBadge item={skill} />
-            </ React.Fragment>
-        );
-    });
 
-    const art = artSkills.map(skill => {
-        return(
-            <React.Fragment>
-                <RenderBadge item={skill} />
-            </React.Fragment>
-        );
-    });
-
-    const video = videoSkills.map(skill => {
-        return(
-            <React.Fragment>
-                <RenderBadge item={skill} />
-            </React.Fragment>
-        );
-    });
-
-    const threedee = threedeeSkill.map(skill => {
-        return(
-            <React.Fragment>
-                <RenderBadge item={skill} />
-            </React.Fragment>
-        )
-    });
-*/
 function RenderBadge({item}) {
     console.log(item);
     return(
@@ -60,7 +28,7 @@ function RenderBadge({item}) {
     
         return(
             <View>
-                <Text style={styles.text}>SKILLS</Text>
+                <Text style={styles.headerText}>SKILLS</Text>
                 
                 
                 <Text style={styles.text}>WEB</Text>
@@ -122,6 +90,15 @@ const styles = StyleSheet.create({
     },
     text: {
         textAlign: 'center'
+    },
+    headerText: {
+        textAlign: 'center',
+        width: '100%',
+        backgroundColor: 'orange',
+        padding: 5,
+        fontSize: 20,
+        marginBottom: 10,
+        color: 'darkred'
     }
 });
 
