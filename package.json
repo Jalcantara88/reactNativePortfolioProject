@@ -10,6 +10,7 @@
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
     "expo": "~40.0.0",
+    "expo-notifications": "~0.8.2",
     "expo-status-bar": "~1.0.3",
     "native": "^0.3.3",
     "native-forms-react": "^1.5.9",
@@ -18,6 +19,7 @@
     "react-native": "^0.63.4",
     "react-native-elements": "2.2.1",
     "react-native-gesture-handler": "~1.8.0",
+    "react-native-linear-gradient": "^2.5.6",
     "react-native-reanimated": "~1.13.0",
     "react-native-safe-area-context": "3.1.9",
     "react-native-screens": "~2.15.2",

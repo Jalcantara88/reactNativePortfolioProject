@@ -16,7 +16,9 @@ function RenderBadge({item}) {
     console.log(item);
     return(
         <TouchableOpacity
-                onPress={() => Alert.alert("skill pressed")}
+                onPress={() => {
+                    
+                    Alert.alert(`${item.skillName} \nlvl: ${item.level}`)}}
         >
             <Image style={styles.skillBadge} source={item.image}/> 
 
@@ -27,7 +29,7 @@ function RenderBadge({item}) {
     
     
         return(
-            <View>
+            <View style={{paddingBottom: 20}}>
                 <Text style={styles.headerText}>SKILLS</Text>
                 
                 
@@ -94,11 +96,11 @@ const styles = StyleSheet.create({
     headerText: {
         textAlign: 'center',
         width: '100%',
-        backgroundColor: 'orange',
+        backgroundColor: '#BA2B37',
         padding: 5,
         fontSize: 20,
         marginBottom: 10,
-        color: 'darkred'
+        color: 'white'
     }
 });
 

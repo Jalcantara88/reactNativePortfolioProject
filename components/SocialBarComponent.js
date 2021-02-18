@@ -21,15 +21,15 @@ class SocialBar extends Component {
         const renderSocialLink = ({item}) => (
             <>
             
-            <TouchableOpacity
-                onPress={() => Linking.openURL(item.url)}
-            >
-                <Image 
-                    style={styles.socialIcon} 
-                    source={item.image}
-                    
-                />
-            </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => Linking.openURL(item.url)}
+                >
+                    <Image 
+                        style={styles.socialIcon} 
+                        source={item.image}
+                        
+                    />
+                </TouchableOpacity>
             
     
             
@@ -62,16 +62,15 @@ class SocialBar extends Component {
 
 const styles = StyleSheet.create({
     flatlist: {
-        backgroundColor: '#683CEC',
-        height: 60,
+        backgroundColor: '#86438A',
+        height: 45,
         width: '100%',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         alignItems: 'center'
     },
     socialIcon: {
-        height: 50,
-        width: 50,
-        margin: 3
+        height: 30,
+        width: 30,
     },
 });
 

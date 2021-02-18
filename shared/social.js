@@ -1,9 +1,9 @@
 export const SOCIAL = [
-    {
+    /*{
         id: 0,
         image: require("../assets/behance.png"),
         url: "https://www.behance.net/DeadHead"
-    },
+    },*/
     {
         id: 1,
         image: require("../assets/facebook.png"),
@@ -29,9 +29,9 @@ export const SOCIAL = [
         image: require("../assets/upwork.png"),
         url: "https://www.upwork.com/o/profiles/users/~019888456e37ad31ca/?viewMode=1"
     },
-    {
+    /*{
         id: 6,
         image: require("../assets/dribbble.png"),
         url: "https://dribbble.com/deadheaddesign"
-    }
+    }*/
 ];

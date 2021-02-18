@@ -21,9 +21,13 @@ class Contact extends Component {
 
     render() {
         return(
-            <View style={{backgroundColor: '#fff'}}>
+            <>
+            <View style={{width: '100%', backgroundColor: 'orange', padding: 5}}>
+                <Text style={{textAlign: 'center', fontSize: 20, color: 'white'}}>CONTACT</Text>
+            </View>
+            <View style={{backgroundColor: '#322533', paddingVertical: 10}}>
                 <Card style={styles.container}>
-                    <Text style={{textAlign: 'center'}}>MESSAGE ME</Text>
+                    
                     <Input
                         placeholder='Name'
                         placeholderTextColor='orange'
@@ -69,6 +73,7 @@ class Contact extends Component {
                     />
                 </Card>
             </View>
+            </>
         );
     }
 };
@@ -84,7 +89,8 @@ const styles = StyleSheet.create({
     },
     container: {
         justifyContent: 'center',
-        margin: 20
+        margin: 20,
+        
     },
     formIcon: {
         marginRight: 10

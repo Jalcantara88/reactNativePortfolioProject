@@ -19,7 +19,7 @@ class Main extends Component {
                     <SocialBar />
                     <Profile />
                     <Skills />
-
+                    <Portfolio />
                     <Contact />
                 </ScrollView>
                 
