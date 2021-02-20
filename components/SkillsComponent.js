@@ -1,35 +1,77 @@
 import React, { Component } from 'react';
-import { View, Platform, Image, Text, FlatList, StyleSheet, TouchableOpacity, Alert } from 'react-native';
-import { Card } from 'react-native-elements';
+import { View, Platform, Image, Text, FlatList, StyleSheet, TouchableOpacity, Alert, Modal } from 'react-native';
+import { Card, AirbnbRating } from 'react-native-elements';
 import { SKILLS } from '../shared/skills';
 
 
 
-function Skills() {
+class Skills extends Component {
 
-    const webSkills = SKILLS.filter(skill => skill.type === 'web');
-    const artSkills = SKILLS.filter(skill => skill.type === 'art');
-    const videoSkills = SKILLS.filter(skill => skill.type === 'video');
-    const threedeeSkills = SKILLS.filter(skill => skill.type === 'threedee');
-
-function RenderBadge({item}) {
-    console.log(item);
-    return(
-        <TouchableOpacity
-                onPress={() => {
-                    
-                    Alert.alert(`${item.skillName} \nlvl: ${item.level}`)}}
-        >
-            <Image style={styles.skillBadge} source={item.image}/> 
-
-        </TouchableOpacity>
-       
-    );
-};
+    constructor(props) {
+        super(props);
+        this.state = {
+            webSkills : SKILLS.filter(skill => skill.type === 'web'),
+            artSkills : SKILLS.filter(skill => skill.type === 'art'),
+            videoSkills : SKILLS.filter(skill => skill.type === 'video'),
+            threedeeSkills : SKILLS.filter(skill => skill.type === 'threedee'),
+            modalVisible: false,
+            selectedSkill: SKILLS[0]
+        }
+    }
     
+
+    RenderBadge = ({item}) => {
+        //console.log(item);
+
+        return(
+            <TouchableOpacity
+                    onPress={() => {
+                        
+                        this.setState({modalVisible: !this.state.modalVisible})
+                        this.setState({selectedSkill: item})
+                    }}
+            >
+                <Image style={styles.skillBadge} source={item.image}/> 
+
+            </TouchableOpacity>
+        
+        );
+    };
     
+    render(){
         return(
             <View style={{paddingBottom: 20}}>
+
+                <Modal 
+                    animationType = {"slide"} 
+                    transparent = {true}
+                    visible = {this.state.modalVisible}
+                    onRequestClose = {() => { console.log("Modal has been closed.") } }>
+                
+                    <View style = {styles.modal}>
+
+                        <Card 
+                            containerStyle={styles.ratingView}
+                            title={this.state.selectedSkill.skillName}
+                            titleStyle={styles.ratingTitle}    
+                        >
+                            <AirbnbRating
+                                count={5}
+                                reviews={["Beginner", "Intermediate", "Advanced", "Expert", "GodLike"]}
+                                defaultRating={this.state.selectedSkill.level}
+                                size={20}
+                            />
+                        </Card>
+                        <TouchableOpacity
+                            style={styles.modalClose} 
+                            onPress = {() => {
+                            this.setState({modalVisible: !this.state.modalVisible})}}>
+                            
+                            <Text>Close</Text>
+                        </TouchableOpacity>
+                    </View>
+                </Modal>
+
                 <Text style={styles.headerText}>SKILLS</Text>
                 
                 
@@ -37,8 +79,8 @@ function RenderBadge({item}) {
 
                 <FlatList
                     contentContainerStyle={styles.flatlist}
-                    data={webSkills}
-                    renderItem={RenderBadge}
+                    data={this.state.webSkills}
+                    renderItem={this.RenderBadge}
                     keyExtractor={(item) => item.id.toString()}
                     horizontal={true}
                 />
@@ -47,8 +89,8 @@ function RenderBadge({item}) {
 
                 <FlatList
                     contentContainerStyle={styles.flatlist}
-                    data={artSkills}
-                    renderItem={RenderBadge}
+                    data={this.state.artSkills}
+                    renderItem={this.RenderBadge}
                     keyExtractor={(item) => item.id.toString()}
                     horizontal={true}
                 />
@@ -57,8 +99,8 @@ function RenderBadge({item}) {
 
                 <FlatList
                     contentContainerStyle={styles.flatlist}
-                    data={videoSkills}
-                    renderItem={RenderBadge}
+                    data={this.state.videoSkills}
+                    renderItem={this.RenderBadge}
                     keyExtractor={(item) => item.id.toString()}
                     horizontal={true}
                 />
@@ -67,14 +109,14 @@ function RenderBadge({item}) {
 
                 <FlatList
                     contentContainerStyle={styles.flatlist}
-                    data={threedeeSkills}
-                    renderItem={RenderBadge}
+                    data={this.state.threedeeSkills}
+                    renderItem={this.RenderBadge}
                     keyExtractor={(item) => item.id.toString()}
                     horizontal={true}
                 />
             </View>
         );
-    
+    }
 };
 
 const styles = StyleSheet.create({
@@ -101,6 +143,30 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginBottom: 10,
         color: 'white'
+    },
+    modal: {
+        flex: 1,
+        alignItems: 'center',
+        opacity: 100,
+        paddingTop: 100
+    },
+    ratingTitle: {
+        fontSize: 30,
+        color: 'white'
+    },
+    modalClose: {
+        borderRadius: 10,
+        backgroundColor: '#fff',
+        padding: 10,
+        marginTop: 50
+    },
+    skillLevel: {
+        fontSize: 15,
+    },
+    ratingView: {
+        backgroundColor: '#3D3140',
+        borderRadius: 10,
+        
     }
 });
 

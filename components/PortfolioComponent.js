@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { PROJECTS } from '../shared/projects';
-// import all the components we are going to use
 import { StyleSheet, View, FlatList, Image, TouchableOpacity, Text } from 'react-native';
 import { Card, Button, Icon } from 'react-native-elements';
 import { Linking } from 'react-native';
@@ -15,7 +14,7 @@ class Portfolio extends Component {
   };
   
   render() {
-  console.log(this.state.selectedProject);
+  //console.log(this.state.selectedProject);
 
 
   return (
@@ -23,7 +22,7 @@ class Portfolio extends Component {
       <Text style={styles.headerText}>PORTFOLIO</Text>
       <Card
             title={this.state.selectedProject.name}
-            titleStyle={{padding: 2, margin: 0}}
+            titleStyle={{padding: 0, margin: 0}}
             text={this.state.selectedProject.description}
             containerStyle={styles.card}
             image={this.state.selectedProject.preview}
@@ -59,12 +58,12 @@ class Portfolio extends Component {
         renderItem={({ item }) => (
           <TouchableOpacity 
             style={{ flex: 1, flexDirection: 'column' }}
-            onPress={() => {this.setState({ selectedProject: item}); console.log(this.state.selectedProject)}}
+            onPress={() => {this.setState({ selectedProject: item}); //console.log(this.state.selectedProject)
+          }}
           >
             <Image style={styles.imageThumbnail} source={item.thumb} />
           </TouchableOpacity>
         )}
-        //Setting the number of column
         numColumns={3}
         keyExtractor={(item) => item.id.toString()}
       />
