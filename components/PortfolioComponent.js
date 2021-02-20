@@ -1,33 +1,65 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import { PROJECTS } from '../shared/projects';
 // import all the components we are going to use
 import { StyleSheet, View, FlatList, Image, TouchableOpacity, Text } from 'react-native';
 import { Card, Button, Icon } from 'react-native-elements';
+import { Linking } from 'react-native';
 
-const Portfolio = () => {
-  var selectedProject = PROJECTS[0];
-  console.log(selectedProject);
+class Portfolio extends Component {
 
-  const handleSelect = () => {
-    console.log(selectedProject);
-  }
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedProject: PROJECTS[0]
+    };
+  };
+  
+  render() {
+  console.log(this.state.selectedProject);
+
 
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>PORTFOLIO</Text>
       <Card
-        title={selectedProject.name}
-        text={selectedProject.description}
-        containerStyle={styles.card}
-      >
-        <Image source={selectedProject.preview} style={styles.cardImage}/>
-      </Card>
+            title={this.state.selectedProject.name}
+            titleStyle={{padding: 2, margin: 0}}
+            text={this.state.selectedProject.description}
+            containerStyle={styles.card}
+            image={this.state.selectedProject.preview}
+          >
+            <Text style={{textAlign: 'center'}}>{this.state.selectedProject.description}</Text>
+            
+            <View style={{alignItems: 'center', marginVertical: 10}}>
+            <FlatList
+              data={this.state.selectedProject.skills}
+              extraData={this.state.selectedProject}
+              horizontal={true}
+              containerStyle={{paddingLeft: 100, justifyContent: 'space-evenly'}}
+              renderItem={({item}) => (
+                <Button
+                  title={item.name}
+                  buttonStyle={{margin: 5, backgroundColor: 'orange', paddingVertical: 0}}
+                  />    
+              )}
+              keyExtractor={item => item.id.toString()}
+            />
+            </View>
+            
+            
+            <Button
+              title='VIEW PROJECT'
+              onPress={() => Linking.openURL(this.state.selectedProject.link)}
+              />
+          </Card>
+      
+      
       <FlatList
         data={PROJECTS}
         renderItem={({ item }) => (
           <TouchableOpacity 
             style={{ flex: 1, flexDirection: 'column' }}
-            onPress={() => {selectedProject: item; console.log(item)}}
+            onPress={() => {this.setState({ selectedProject: item}); console.log(this.state.selectedProject)}}
           >
             <Image style={styles.imageThumbnail} source={item.thumb} />
           </TouchableOpacity>
@@ -38,6 +70,7 @@ const Portfolio = () => {
       />
     </View>
   );
+        }
 };
 export default Portfolio;
 
@@ -56,15 +89,10 @@ const styles = StyleSheet.create({
     width: '98%',
     margin: 1
   },
-  cardImage: {
-    width: '100%',
-    height: 200,
-    resizeMode: 'stretch'
-  },
   card: {
     marginBottom: 20,
     marginTop: 20,
-    borderRadius: 15
+    borderRadius: 15,
   },
   headerText: {
     textAlign: 'center',

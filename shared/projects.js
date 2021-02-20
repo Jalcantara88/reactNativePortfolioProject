@@ -1,13 +1,26 @@
 export const PROJECTS = [
     {
         id: 0,
-        name: "Project 1",
+        name: "Mona-Liza Beauty",
         preview: require("../assets/portfolio/previews/preview1.png"),
         thumb: require("../assets/portfolio/thumbs/thumb1.png"),
         full: require("../assets/portfolio/fulls/full1.png"),
-        skills: "Bootstrap, HTML, CSS",
-        description: "this was made for yada yada",
-        link: "url"
+        skills: [
+            {
+                id: 0,
+                name: 'bootstrap'
+            },
+            {
+                id: 1,
+                name: 'html'
+            },
+            {
+                id: 2,
+                name: 'css'
+            }
+        ],
+        description: "Website for a Beauty Salon with Storefront and Scheduling Features",
+        link: "http://www.monaliza-beauty.com"
     },
     {
         id: 1,
@@ -15,7 +28,20 @@ export const PROJECTS = [
         preview: require("../assets/portfolio/previews/preview2.png"),
         thumb: require("../assets/portfolio/thumbs/thumb2.png"),
         full: require("../assets/portfolio/fulls/full1.png"),
-        skills: "Bootstrap, HTML, CSS",
+        skills: [
+            {
+                id: 0,
+                name: 'bootstrap'
+            },
+            {
+                id: 1,
+                name: 'html'
+            },
+            {
+                id: 2,
+                name: 'css'
+            }
+        ],
         description: "this was made for yada yada",
         link: "url"
     },
@@ -25,7 +51,20 @@ export const PROJECTS = [
         preview: require("../assets/portfolio/previews/preview3.png"),
         thumb: require("../assets/portfolio/thumbs/thumb3.png"),
         full: require("../assets/portfolio/fulls/full1.png"),
-        skills: "Bootstrap, HTML, CSS",
+        skills: [
+            {
+                id: 0,
+                name: 'bootstrap'
+            },
+            {
+                id: 1,
+                name: 'html'
+            },
+            {
+                id: 2,
+                name: 'css'
+            }
+        ],
         description: "this was made for yada yada",
         link: "url"
     },
@@ -35,7 +74,20 @@ export const PROJECTS = [
         preview: require("../assets/portfolio/previews/preview4.png"),
         thumb: require("../assets/portfolio/thumbs/thumb4.png"),
         full: require("../assets/portfolio/fulls/full1.png"),
-        skills: "Bootstrap, HTML, CSS",
+        skills: [
+            {
+                id: 0,
+                name: 'bootstrap'
+            },
+            {
+                id: 1,
+                name: 'html'
+            },
+            {
+                id: 2,
+                name: 'css'
+            }
+        ],
         description: "this was made for yada yada",
         link: "url"
     },
@@ -45,7 +97,20 @@ export const PROJECTS = [
         preview: require("../assets/portfolio/previews/preview5.png"),
         thumb: require("../assets/portfolio/thumbs/thumb5.png"),
         full: require("../assets/portfolio/fulls/full1.png"),
-        skills: "Bootstrap, HTML, CSS",
+        skills: [
+            {
+                id: 0,
+                name: 'bootstrap'
+            },
+            {
+                id: 1,
+                name: 'html'
+            },
+            {
+                id: 2,
+                name: 'css'
+            }
+        ],
         description: "this was made for yada yada",
         link: "url"
     },
@@ -55,7 +120,20 @@ export const PROJECTS = [
         preview: require("../assets/portfolio/previews/preview6.png"),
         thumb: require("../assets/portfolio/thumbs/thumb6.png"),
         full: require("../assets/portfolio/fulls/full1.png"),
-        skills: "Bootstrap, HTML, CSS",
+        skills: [
+            {
+                id: 0,
+                name: 'bootstrap'
+            },
+            {
+                id: 1,
+                name: 'html'
+            },
+            {
+                id: 2,
+                name: 'css'
+            }
+        ],
         description: "this was made for yada yada",
         link: "url"
     },
@@ -65,7 +143,20 @@ export const PROJECTS = [
         preview: require("../assets/portfolio/previews/preview7.png"),
         thumb: require("../assets/portfolio/thumbs/thumb7.png"),
         full: require("../assets/portfolio/fulls/full1.png"),
-        skills: "Bootstrap, HTML, CSS",
+        skills: [
+            {
+                id: 0,
+                name: 'bootstrap'
+            },
+            {
+                id: 1,
+                name: 'html'
+            },
+            {
+                id: 2,
+                name: 'css'
+            }
+        ],
         description: "this was made for yada yada",
         link: "url"
     },
@@ -75,7 +166,20 @@ export const PROJECTS = [
         preview: require("../assets/portfolio/previews/preview8.png"),
         thumb: require("../assets/portfolio/thumbs/thumb8.png"),
         full: require("../assets/portfolio/fulls/full1.png"),
-        skills: "Bootstrap, HTML, CSS",
+        skills: [
+            {
+                id: 0,
+                name: 'bootstrap'
+            },
+            {
+                id: 1,
+                name: 'html'
+            },
+            {
+                id: 2,
+                name: 'css'
+            }
+        ],
         description: "this was made for yada yada",
         link: "url"
     },
@@ -85,7 +189,20 @@ export const PROJECTS = [
         preview: require("../assets/portfolio/previews/preview9.png"),
         thumb: require("../assets/portfolio/thumbs/thumb9.png"),
         full: require("../assets/portfolio/fulls/full1.png"),
-        skills: "Bootstrap, HTML, CSS",
+        skills: [
+            {
+                id: 0,
+                name: 'bootstrap'
+            },
+            {
+                id: 1,
+                name: 'html'
+            },
+            {
+                id: 2,
+                name: 'css'
+            }
+        ],
         description: "this was made for yada yada",
         link: "url"
     }
