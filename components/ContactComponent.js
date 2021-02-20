@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { View, Button, StyleSheet, TextInput } from 'react-native';
 import { Card, Text, Input, CheckBox } from 'react-native-elements';
+import * as MailComposer from 'expo-mail-composer';
+
+
 
 class Contact extends Component {
 
@@ -15,8 +18,13 @@ class Contact extends Component {
         };
     }
 
-    handleSubmit() {
+    sendMail() {
         console.log(this.state);
+        MailComposer.composeAsync({
+            recipients: ['julio@deadheadstudio.com'],
+            subject: `Site Message from : ${this.state.name}`,
+            body: `message: ${this.state.message} \ncontact:${this.state.canContact.toString()} \nemail: ${this.state.email}`
+        });
     }
 
     render() {
@@ -67,7 +75,7 @@ class Contact extends Component {
                     />
 
                     <Button
-                        onPress={() => this.handleSubmit()}
+                        onPress={() => this.sendMail()}
                         title='Submit'
                         color='orange'
                     />

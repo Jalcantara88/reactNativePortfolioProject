@@ -4,9 +4,11 @@ import Profile from './ProfileComponent';
 import Skills from './SkillsComponent';
 import Footer from './FooterComponent';
 import Portfolio from './PortfolioComponent';
+import Certs from './CertsComponent';
 import Contact from './ContactComponent';
 import { SafeAreaView, StyleSheet, ScrollView } from 'react-native';
 import { StatusBar } from 'react-native';
+
 
 
 class Main extends Component {
@@ -20,6 +22,7 @@ class Main extends Component {
                     <Profile />
                     <Skills />
                     <Portfolio />
+                    <Certs />
                     <Contact />
                 </ScrollView>
                 

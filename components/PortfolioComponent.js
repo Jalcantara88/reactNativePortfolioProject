@@ -1,62 +1,77 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { PROJECTS } from '../shared/projects';
-import { View, Platform, StyleSheet, FlatList, Image } from 'react-native';
-import { Card, ListItem, Text } from 'react-native-elements';
+// import all the components we are going to use
+import { StyleSheet, View, FlatList, Image, TouchableOpacity, Text } from 'react-native';
+import { Card, Button, Icon } from 'react-native-elements';
 
+const Portfolio = () => {
+  var selectedProject = PROJECTS[0];
+  console.log(selectedProject);
 
-class Portfolio extends Component {
-    
-    constructor(props) {
-        super(props);
+  const handleSelect = () => {
+    console.log(selectedProject);
+  }
 
-        this.state = {
-            selectedId: '1',
-            projects: PROJECTS
-        };
-    }
-    
-    
-
-    render() {
-        console.log(PROJECTS);
-        console.log(this.state.projects);
-
-        const renderProject = ({item}) => {
-            <>
-            <Image source={item.thumb} style={{ height: 30, width: 30}} />
-            <Text>{item.name}</Text>
-            </>
-        }
-
-        return(
-            <>
-            <View style={{width: '100%', backgroundColor: '#2B81BA', padding: 5}}>
-                <Text style={{textAlign: 'center', fontSize: 20, color: 'white'}}>PORTFOLIO</Text>
-            </View>
-            <View style={styles.container}>
-                <Card style={{}}>
-                    <Text style={{textAlign: 'center', fontSize: 25, marginVertical: 70}}>selected project here</Text>
-
-                </Card>
-                
-                <FlatList
-                    data={PROJECTS}
-                    renderItem={renderProject}
-                    keyExtractor={item => item.id.toString()}
-                />
-
-            </View>
-            </>
-        );
-    }
+  return (
+    <View style={styles.container}>
+      <Text style={styles.headerText}>PORTFOLIO</Text>
+      <Card
+        title={selectedProject.name}
+        text={selectedProject.description}
+        containerStyle={styles.card}
+      >
+        <Image source={selectedProject.preview} style={styles.cardImage}/>
+      </Card>
+      <FlatList
+        data={PROJECTS}
+        renderItem={({ item }) => (
+          <TouchableOpacity 
+            style={{ flex: 1, flexDirection: 'column' }}
+            onPress={() => {selectedProject: item; console.log(item)}}
+          >
+            <Image style={styles.imageThumbnail} source={item.thumb} />
+          </TouchableOpacity>
+        )}
+        //Setting the number of column
+        numColumns={3}
+        keyExtractor={(item) => item.id.toString()}
+      />
+    </View>
+  );
 };
+export default Portfolio;
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#86438A',
-        height: 500,
-        paddingVertical: 10
-    }
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingLeft: 1,
+    backgroundColor: '#86438A',
+    paddingBottom: 20
+  },
+  imageThumbnail: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 120,
+    width: '98%',
+    margin: 1
+  },
+  cardImage: {
+    width: '100%',
+    height: 200,
+    resizeMode: 'stretch'
+  },
+  card: {
+    marginBottom: 20,
+    marginTop: 20,
+    borderRadius: 15
+  },
+  headerText: {
+    textAlign: 'center',
+    width: '100%',
+    backgroundColor: '#2B81BA',
+    padding: 5,
+    fontSize: 20,
+    color: 'white'
+  }
 });
-
-export default Portfolio;
