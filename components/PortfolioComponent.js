@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     paddingLeft: 1,
-    backgroundColor: '#86438A',
+    backgroundColor: '#322533',
     paddingBottom: 20
   },
   imageThumbnail: {
