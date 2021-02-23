@@ -30,7 +30,7 @@ export const SKILLS = [
     {
         id: 4,
         image: require("../assets/badges/reactBadge.png"),
-        skillName: "React",
+        skillName: "React + Native",
         level: 2,
         type: "web"
     },
@@ -44,35 +44,35 @@ export const SKILLS = [
     {
         id: 6,
         image: require("../assets/badges/illustratorBadge.png"),
-        skillName: "AdobeIllustrator",
+        skillName: "Illustrator",
         level: 5,
         type: "art"
     },
     {
         id: 7,
         image: require("../assets/badges/animateBadge.png"),
-        skillName: "AdobeAnimate",
+        skillName: "Animate",
         level: 3,
         type: "art"
     },
     {
         id: 8,
         image: require("../assets/badges/premiereBadge.png"),
-        skillName: "AdobePremiere",
+        skillName: "Premiere",
         level: 4,
         type: "video"
     },
     {
         id: 9,
         image: require("../assets/badges/auditionBadge.png"),
-        skillName: "AdobeAudition",
+        skillName: "Audition",
         level: 2,
         type: "video"
     },
     {
         id: 10,
         image: require("../assets/badges/afterEffectsBadge.png"),
-        skillName: "AdobeAfterEfffects",
+        skillName: "AfterEfffects",
         level: 4,
         type: "video"
     },
@@ -86,7 +86,7 @@ export const SKILLS = [
     {
         id: 12,
         image: require("../assets/badges/3dsmaxBadge.png"),
-        skillName: "ThreeDeeSMax",
+        skillName: "3DSMax",
         level: 3,
         type: "threedee"
     },

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { PROJECTS } from '../shared/projects';
-import { StyleSheet, View, FlatList, Image, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, View, FlatList, Image, TouchableOpacity, Text, Linking } from 'react-native';
 import { Card, Button, Icon } from 'react-native-elements';
-import { Linking } from 'react-native';
+
 
 class Portfolio extends Component {
 
@@ -22,23 +22,26 @@ class Portfolio extends Component {
       <Text style={styles.headerText}>PORTFOLIO</Text>
       <Card
             title={this.state.selectedProject.name}
-            titleStyle={{padding: 0, margin: 0}}
+            titleStyle={{padding: 0, margin: 0, color: '#2B81BA'}}
+            
             text={this.state.selectedProject.description}
             containerStyle={styles.card}
             image={this.state.selectedProject.preview}
+            imageStyle={{resizeMode: 'cover', height: 200, margin: 0}}
           >
-            <Text style={{textAlign: 'center'}}>{this.state.selectedProject.description}</Text>
+            <Text style={{textAlign: 'center', margin: 0}}>{this.state.selectedProject.description}</Text>
             
-            <View style={{alignItems: 'center', marginVertical: 10}}>
+            <View style={{alignItems: 'center', marginVertical: 2}}>
             <FlatList
               data={this.state.selectedProject.skills}
               extraData={this.state.selectedProject}
-              horizontal={true}
-              containerStyle={{paddingLeft: 100, justifyContent: 'space-evenly'}}
+              numColumns={4}
+              containerStyle={{ justifyContent: 'space-evenly', padding: 0, marginVertical: 0}}
               renderItem={({item}) => (
                 <Button
                   title={item.name}
-                  buttonStyle={{margin: 5, backgroundColor: 'orange', paddingVertical: 0}}
+                  titleStyle={{fontSize: 12}}
+                  buttonStyle={{marginHorizontal: 1, marginVertical: 1, backgroundColor: 'orange', padding: 2}}
                   />    
               )}
               keyExtractor={item => item.id.toString()}
@@ -48,6 +51,7 @@ class Portfolio extends Component {
             
             <Button
               title='VIEW PROJECT'
+              buttonStyle={{padding: 1, marginVertical: 0, borderRadius: 10}}
               onPress={() => Linking.openURL(this.state.selectedProject.link)}
               />
           </Card>
@@ -75,7 +79,6 @@ export default Portfolio;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     paddingLeft: 1,
     backgroundColor: '#322533',
@@ -84,14 +87,15 @@ const styles = StyleSheet.create({
   imageThumbnail: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: 120,
+    height: 110,
     width: '98%',
     margin: 1
   },
   card: {
-    marginBottom: 20,
-    marginTop: 20,
+    
     borderRadius: 15,
+    padding: 0,
+    
   },
   headerText: {
     textAlign: 'center',

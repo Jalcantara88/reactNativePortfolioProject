@@ -61,14 +61,16 @@ class Skills extends Component {
                                 defaultRating={this.state.selectedSkill.level}
                                 size={20}
                             />
+
+                            <TouchableOpacity
+                                style={styles.modalClose} 
+                                onPress = {() => {
+                                this.setState({modalVisible: !this.state.modalVisible})}}>
+                                
+                                <Text style={{textAlign: 'center'}}>Close</Text>
+                            </TouchableOpacity>
                         </Card>
-                        <TouchableOpacity
-                            style={styles.modalClose} 
-                            onPress = {() => {
-                            this.setState({modalVisible: !this.state.modalVisible})}}>
-                            
-                            <Text>Close</Text>
-                        </TouchableOpacity>
+                        
                     </View>
                 </Modal>
 
@@ -148,7 +150,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         opacity: 100,
-        paddingTop: 100
+        paddingTop: 100,
+        backgroundColor: 'rgba(0,0,0,0.5)'
     },
     ratingTitle: {
         fontSize: 30,
@@ -156,6 +159,7 @@ const styles = StyleSheet.create({
     },
     modalClose: {
         borderRadius: 10,
+        
         backgroundColor: '#fff',
         padding: 10,
         marginTop: 50
@@ -165,6 +169,7 @@ const styles = StyleSheet.create({
     },
     ratingView: {
         backgroundColor: '#3D3140',
+        borderColor: '#3D3140',
         borderRadius: 10,
         
     }
