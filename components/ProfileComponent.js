@@ -1,15 +1,10 @@
-import React, { Component, useRef } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
-import { View, Platform, ScrollView } from 'react-native';
-import { Card, Text, Avatar, Image, Button, Icon } from 'react-native-elements';
+import { View } from 'react-native';
+import { Card, Text } from 'react-native-elements';
 import * as Animatable from 'react-native-animatable';
 
 function Profile() {
-
-    
-    
-
-        
 
         return(
             <>

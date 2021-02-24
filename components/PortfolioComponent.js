@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { PROJECTS } from '../shared/projects';
 import { StyleSheet, View, FlatList, Image, TouchableOpacity, Text, Linking } from 'react-native';
-import { Card, Button, Icon } from 'react-native-elements';
+import { Card, Button } from 'react-native-elements';
 import * as Animatable from 'react-native-animatable';
 
 

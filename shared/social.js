@@ -6,27 +6,27 @@ export const SOCIAL = [
     },*/
     {
         id: 1,
-        image: require("../assets/facebook.png"),
+        image: require("../assets/socialIcons/facebook.png"),
         url: "https://www.facebook.com/bone.head.designer"
     },
     {
         id: 2,
-        image: require("../assets/instagram.png"),
+        image: require("../assets/socialIcons/instagram.png"),
         url: "https://www.instagram.com/bone.head.designer/"
     },
     {
         id: 3,
-        image: require("../assets/linkedin.png"),
+        image: require("../assets/socialIcons/linkedin.png"),
         url: "https://www.linkedin.com/in/deadheadstudio/"
     },
     {
         id: 4,
-        image: require("../assets/ytube.png"),
+        image: require("../assets/socialIcons/ytube.png"),
         url: "https://www.youtube.com/channel/UCzLJQTYgUrhEFAOxt2ek0lg?"
     },
     {
         id: 5,
-        image: require("../assets/upwork.png"),
+        image: require("../assets/socialIcons/upwork.png"),
         url: "https://www.upwork.com/o/profiles/users/~019888456e37ad31ca/?viewMode=1"
     },
     /*{

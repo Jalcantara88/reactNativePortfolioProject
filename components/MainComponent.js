@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SocialBar from './SocialBarComponent';
 import Profile from './ProfileComponent';
 import Skills from './SkillsComponent';
-import Footer from './FooterComponent';
 import Portfolio from './PortfolioComponent';
 import Certs from './CertsComponent';
 import Contact from './ContactComponent';

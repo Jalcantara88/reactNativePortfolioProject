@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { View, Platform, Image, Text, FlatList, StyleSheet, TouchableOpacity, Alert, Modal } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, Modal } from 'react-native';
 import { Card } from 'react-native-elements';
 import { CERTS } from '../shared/certs';
 import * as Animatable from 'react-native-animatable';

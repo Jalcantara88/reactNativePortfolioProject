@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { SOCIAL } from '../shared/social';
-//import { Image } from 'react-native-elements';
-import { FlatList, Text, StyleSheet, Image, TouchableOpacity, Alert } from 'react-native';
-import { Linking, StatusBar } from 'react-native';
+import { FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { Linking } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 
 

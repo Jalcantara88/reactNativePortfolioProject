@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Platform, Image, Text, FlatList, StyleSheet, TouchableOpacity, Alert, Modal } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, Modal } from 'react-native';
 import { Card, AirbnbRating } from 'react-native-elements';
 import { SKILLS } from '../shared/skills';
 import * as Animatable from 'react-native-animatable';
