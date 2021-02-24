@@ -3,7 +3,7 @@ import { SOCIAL } from '../shared/social';
 //import { Image } from 'react-native-elements';
 import { FlatList, Text, StyleSheet, Image, TouchableOpacity, Alert } from 'react-native';
 import { Linking, StatusBar } from 'react-native';
-
+import * as Animatable from 'react-native-animatable';
 
 
 
@@ -24,7 +24,9 @@ class SocialBar extends Component {
                 <TouchableOpacity
                     onPress={() => Linking.openURL(item.url)}
                 >
-                    <Image 
+                    <Animatable.Image 
+                    animation='fadeInRightBig'
+                    duration={2000}
                         style={styles.socialIcon} 
                         source={item.image}
                         

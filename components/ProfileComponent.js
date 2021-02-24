@@ -2,36 +2,11 @@ import React, { Component, useRef } from 'react';
 import { StyleSheet } from 'react-native';
 import { View, Platform, ScrollView } from 'react-native';
 import { Card, Text, Avatar, Image, Button, Icon } from 'react-native-elements';
-
+import * as Animatable from 'react-native-animatable';
 
 function Profile() {
 
-    const scrollRef = useRef();
-  
-    const scrollContact = () => {
-            scrollRef.current.ScrollTo({
-            y: 500,
-            animated: true,})
-            return(
-                    <Button
-                        /*icon={
-                            <Icon
-                                name='label'
-                                type='material'
-                                size={25}
-                                color='blue'
-                            />
-                        }*/
-                        
-                        title='MESSAGE'
-                        onPress={scrollContact}
-                    >
-                        CONTACT
-                    </Button>
-            );
-            
-            };
-
+    
     
 
         
@@ -39,14 +14,23 @@ function Profile() {
         return(
             <>
                 <View style={styles.nameHolder}>
-                    <Text style={styles.name}>JULIO ALCANTARA</Text>
+                    <Animatable.Text 
+                        animation='flipInX'
+                        duration={3000}
+                        style={styles.name}>JULIO ALCANTARA</Animatable.Text>
                 </View>
                 <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly', alignContent: 'center', backgroundColor: '#322533', paddingBottom: 15}}>
                     
-                    <Image
+                    <Animatable.Image
+                        animation='slideInLeft'
+                        duration={2000}
                         style={{height: 150, width: 150, marginTop: 15}}
                         source={require('../assets/profilePic.png')}
                     />
+                    <Animatable.View
+                        animation='zoomInUp'
+                        duration={2000}
+                        >
                     <Card containerStyle={{ borderRadius: 10, marginHorizontal: 0 }}
                         title="LVL 33 ARTIST / CODER"
                         titleStyle={{color: '#2B81BA'}}>
@@ -55,7 +39,7 @@ function Profile() {
                     
                     
                     </Card>
-                    
+                    </Animatable.View>
                     
                 </View>
 
