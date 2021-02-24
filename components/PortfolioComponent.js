@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { PROJECTS } from '../shared/projects';
 import { StyleSheet, View, FlatList, Image, TouchableOpacity, Text, Linking } from 'react-native';
 import { Card, Button, Icon } from 'react-native-elements';
+import * as Animatable from 'react-native-animatable';
 
 
 class Portfolio extends Component {
@@ -31,18 +32,25 @@ class Portfolio extends Component {
           >
             <Text style={{textAlign: 'center', margin: 0}}>{this.state.selectedProject.description}</Text>
             
-            <View style={{alignItems: 'center', marginVertical: 2}}>
+            <View 
+              
+              style={{alignItems: 'center', marginVertical: 2}}>
             <FlatList
               data={this.state.selectedProject.skills}
               extraData={this.state.selectedProject}
               numColumns={4}
               containerStyle={{ justifyContent: 'space-evenly', padding: 0, marginVertical: 0}}
               renderItem={({item}) => (
-                <Button
-                  title={item.name}
-                  titleStyle={{fontSize: 12}}
-                  buttonStyle={{marginHorizontal: 1, marginVertical: 1, backgroundColor: 'orange', padding: 2}}
-                  />    
+                <Animatable.View
+                  animation='bounceIn'
+                  duration={1000}
+                >
+                  <Button
+                    title={item.name}
+                    titleStyle={{fontSize: 12}}
+                    buttonStyle={{marginHorizontal: 1, marginVertical: 1, backgroundColor: 'orange', padding: 2}}
+                    />  
+                </Animatable.View>  
               )}
               keyExtractor={item => item.id.toString()}
             />
@@ -65,7 +73,10 @@ class Portfolio extends Component {
             onPress={() => {this.setState({ selectedProject: item}); //console.log(this.state.selectedProject)
           }}
           >
-            <Image style={styles.imageThumbnail} source={item.thumb} />
+            <Animatable.Image 
+              animation='flipInY'
+              duration={3000}
+              style={styles.imageThumbnail} source={item.thumb} />
           </TouchableOpacity>
         )}
         numColumns={3}

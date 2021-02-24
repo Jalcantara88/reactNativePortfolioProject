@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Platform, Image, Text, FlatList, StyleSheet, TouchableOpacity, Alert, Modal } from 'react-native';
 import { Card, AirbnbRating } from 'react-native-elements';
 import { SKILLS } from '../shared/skills';
+import * as Animatable from 'react-native-animatable';
 
 
 
@@ -31,7 +32,12 @@ class Skills extends Component {
                         this.setState({selectedSkill: item})
                     }}
             >
-                <Image style={styles.skillBadge} source={item.image}/> 
+                <Animatable.Image 
+                    animation='flipInX'
+                    duration={4000}
+                    easing='ease-in-out'
+                    style={styles.skillBadge} 
+                    source={item.image}/> 
 
             </TouchableOpacity>
         
@@ -43,12 +49,15 @@ class Skills extends Component {
             <View style={{paddingBottom: 20}}>
 
                 <Modal 
-                    animationType = {"slide"} 
+                    animationType = {"fade"} 
                     transparent = {true}
                     visible = {this.state.modalVisible}
                     onRequestClose = {() => { console.log("Modal has been closed.") } }>
                 
-                    <View style = {styles.modal}>
+                    <Animatable.View 
+                        animation='pulse'
+                        duration={1000}
+                        style = {styles.modal}>
 
                         <Card 
                             containerStyle={styles.ratingView}
@@ -71,7 +80,7 @@ class Skills extends Component {
                             </TouchableOpacity>
                         </Card>
                         
-                    </View>
+                    </Animatable.View>
                 </Modal>
 
                 <Text style={styles.headerText}>SKILLS</Text>

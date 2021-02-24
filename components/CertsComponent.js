@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { View, Platform, Image, Text, FlatList, StyleSheet, TouchableOpacity, Alert, Modal } from 'react-native';
 import { Card } from 'react-native-elements';
 import { CERTS } from '../shared/certs';
+import * as Animatable from 'react-native-animatable';
 
 
 
@@ -18,14 +19,18 @@ class Certs extends Component {
 
    
 RenderCert = ({item}) => {
-    console.log(item);
+    //console.log(item);
     return(
         <TouchableOpacity
                 onPress={() => {
                     this.setState({modalVisible: !this.state.modalVisible})
                     this.setState({selectedCert: item})}}
         >
-            <Image style={styles.cert} source={item.image}/> 
+            <Animatable.Image 
+                animation='zoomIn'
+                duration={2000}
+                style={styles.cert} 
+                source={item.image}/> 
 
         </TouchableOpacity>
        
@@ -41,7 +46,10 @@ RenderCert = ({item}) => {
                     visible = {this.state.modalVisible}
                     onRequestClose = {() => { console.log("Modal has been closed.") } }>
                 
-                    <View style = {styles.modal}>
+                    <Animatable.View 
+                        animation='pulse'
+                        duration={1000}
+                        style = {styles.modal}>
 
                         <Card 
                             containerStyle={styles.certView}
@@ -62,7 +70,7 @@ RenderCert = ({item}) => {
                             </TouchableOpacity>
                         </Card>
                         
-                    </View>
+                    </Animatable.View>
                 </Modal>
                 <Text style={styles.headerText}>Certifications</Text>
                 
