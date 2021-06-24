@@ -8,8 +8,6 @@ import Contact from './ContactComponent';
 import { SafeAreaView, StyleSheet, ScrollView } from 'react-native';
 import { StatusBar } from 'react-native';
 
-
-
 class Main extends Component {
 
     render() {

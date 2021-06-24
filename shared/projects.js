@@ -99,7 +99,7 @@ export const PROJECTS = [
         description: "My Personal Website with Git & YouTube API & Storefront",
         link: "http://www.deadheadstudio.com"
     },
-    {
+    /*{
         id: 3,
         name: "Project 4",
         preview: require("../assets/portfolio/previews/preview4.png"),
@@ -167,7 +167,7 @@ export const PROJECTS = [
         ],
         description: "this was made for yada yada",
         link: "url"
-    },
+    },*/
     {
         id: 6,
         name: "SuperGameBros",
@@ -259,6 +259,6 @@ export const PROJECTS = [
             }
         ],
         description: "Portfolio Project for Front-End React Bootcamp from NuCamp",
-        link: "http://www.nucamp.co"
+        link: "https://snack.expo.io/@jalcantara88/react-native-portfolio"
     }
 ];
